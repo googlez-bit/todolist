@@ -79,3 +79,19 @@
 .ReactModal__Overlay {
   background-color: yellow;
 }
+
+/*Modal Stle*/
+
+.modalHeader {
+  height: 50px;
+  color: #9EC8B9;
+  background-color: var(--backgroundColor);
+}
+
+.modalFooter {
+  height: 50px;
+  background-color: var(--backgroundColor);
+  padding: 0;
+  justify-content: center;
+  overflow: hidden;
+}

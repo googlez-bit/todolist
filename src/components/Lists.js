@@ -1,17 +1,7 @@
 import '../styles/lists.css';
 import { useState } from 'react';
-import Modal from 'react-modal';
+import { Modal, Button } from 'react-bootstrap';
 
-const popUpModalStyle = {
-    bottom: '50%',
-    left: 'auto',
-    right: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    background: 'rgb(25,255,60) !important',
-}
-
-Modal.setAppElement('#root');
 function Lists() {
 
     let subtitle;
@@ -19,7 +9,6 @@ function Lists() {
 
 
     const modalOpen = () => {
-        console.log(popUpModalStyle);
         setModalOpen(true);
     }
 
@@ -32,7 +21,7 @@ function Lists() {
     }
     return (
         <div className='h-100'>
-            <div className='container w-50 h-50'>
+            <div className='container h-50'>
                 <h6 className='titleHeader text-center'>My To Do</h6>
             </div>
             <div id='list' className='container w-50'>
@@ -56,24 +45,18 @@ function Lists() {
                                     <div className='ms-2 btn p-1 btn-primary d-flex align-items-center' onClick={modalOpen}>
                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1B4242"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-480H200v480Zm280-80q-82 0-146.5-44.5T240-440q29-71 93.5-115.5T480-600q82 0 146.5 44.5T720-440q-29 71-93.5 115.5T480-280Zm0-60q56 0 102-26.5t72-73.5q-26-47-72-73.5T480-540q-56 0-102 26.5T306-440q26 47 72 73.5T480-340Zm0-100Zm0 60q25 0 42.5-17.5T540-440q0-25-17.5-42.5T480-500q-25 0-42.5 17.5T420-440q0 25 17.5 42.5T480-380Z" /></svg>
                                     </div>
-                                    <Modal
-                                        isOpen={isModalOpen}
-                                        onRequestClose={modalClose}
-                                        onAfterOpen={afterOpenModal}
-                                        style={popUpModalStyle}
-                                        contentLabel="Example Modal"
-                                    >
+                                    <Modal show={isModalOpen} onHide={modalClose}>
+                                        <Modal.Header closeButton className='modalHeader'>
+                                            <Modal.Title>Here's your note!</Modal.Title>
+                                        </Modal.Header>
 
-                                        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                                        <button onClick={modalClose}>close</button>
-                                        <div>I am a modal</div>
-                                        <form>
-                                            <input />
-                                            <button>tab navigation</button>
-                                            <button>stays</button>
-                                            <button>inside</button>
-                                            <button>the modal</button>
-                                        </form>
+                                        <Modal.Body className='modalBody'>
+                                            Hello im mr Modal!
+                                        </Modal.Body>
+
+                                        <Modal.Footer className='modalFooter'>
+                                            <Button variant='success' onClick={modalClose}>Close</Button>
+                                        </Modal.Footer>
                                     </Modal>
                                 </div>
                             </div>

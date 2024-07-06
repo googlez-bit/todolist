@@ -1,25 +1,27 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-:root{
-    --fontColor: #9EC8B9;
-    --backgroundColor : #092635;
-  }
-h3{
-    color: var(--fontColor);
+:root {
+  --fontColor: #9EC8B9;
+  --backgroundColor: #092635;
 }
 
-.titleMain{
-    font-family: "Itim", cursive;
+h3 {
+  color: var(--fontColor);
+}
+
+.titleMain {
+  font-family: "Itim", cursive;
   font-weight: 400;
 }
 
-.userTextForm{
-    background-color: transparent;
-    border: #a2beb4 2px solid;
-    text-align: center;
-    width: 30vw;
-    height: 20vh;
-    outline: none;
-    color: var(--fontColor);
+.userTextForm {
+  resize: none;
+  background-color: transparent;
+  border: #a2beb4 2px solid;
+  text-align: center;
+  width: 60%;
+  height: 20vh;
+  outline: none;
+  color: var(--fontColor);
 }
